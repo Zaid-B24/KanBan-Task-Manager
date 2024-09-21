@@ -11,7 +11,7 @@ import {
 import UserAvatar from './UserAvatar';
 import { User } from 'next-auth';
 import Link from 'next/link';
-import { signOut } from 'next-auth/react';
+import {  signOut } from 'next-auth/react';
 
 type UserAccountNavProp = {
 	user: Pick<User, 'name' | 'image' | 'email'>;
@@ -44,9 +44,7 @@ const UserAccountNav: FC<UserAccountNavProp> = ({ user }) => {
 					className='cursor-pointer'
 					onClick={(event) => {
 						event.preventDefault();
-						signOut({
-							callbackUrl: `${window.location.origin}/`,
-						})
+						signOut();
 					}}
 				>
 					Sign out
